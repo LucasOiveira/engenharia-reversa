@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protótipo educacional de uma página de marketplace.">
+  <title>Mercado Livre — Página inicial demonstrativa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-area">
+        <a class="brand" href="#" aria-label="Página inicial">
+          <span class="brand-mark" aria-hidden="true">🤝</span>
+          <span class="brand-name">mercado<br><b>livre</b></span>
+        </a>
+        <button class="delivery" id="deliveryBtn"><span class="pin">⌖</span><span>Enviar para<br><b>Brasília 70645151</b></span></button>
+      </div>
+      <div class="header-main">
+        <form class="search" id="searchForm" role="search">
+          <input id="searchInput" type="search" placeholder="Buscar produtos, marcas e muito mais..." autocomplete="off" aria-label="Buscar produtos">
+          <button aria-label="Pesquisar" type="submit">⌕</button>
+        </form>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <button data-category="Categorias">Categorias⌄</button><button data-category="Ofertas">Ofertas</button><button data-category="Cupons">Cupons</button><button data-category="Supermercado">Supermercado</button><button data-category="Moda">Moda</button><button data-category="Mercado Play">Mercado Play</button><button data-category="Vender">Vender</button><button data-category="Contato">Contato</button>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="meli-plus"><b>meli+</b><span>Por apenas<br><strong>R$ 74,90/mês</strong></span><i>▣ ▣ ▣</i></div>
+        <nav class="account-nav" aria-label="Conta">
+          <button id="createAccount">Crie a sua conta</button><button id="loginBtn">Entre</button><button id="purchasesBtn">Compras</button><button id="favoritesBtn" aria-label="Ver favoritos">♡ Favoritos</button><button id="cartBtn" class="cart-button" aria-label="Abrir carrinho">🛒<span id="cartCount">0</span></button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-wrap" aria-label="Promoções">
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-copy"><p>SUA PRIMEIRA<br>COMPRA COM</p><h1>FRETE GRÁTIS</h1><small>*Consulte os Termos e Condições.</small></div>
+        <div class="hero-box" aria-hidden="true"><span class="box-items">🎧　🧴</span><div class="box-top"></div><div class="box-front"><small>mercado<br>livre</small><b>Olá, chegou!</b></div></div>
+        <div class="hero-discount">ATÉ <b>60% OFF</b></div>
+      </div>
+      <div class="hero-slide hero-alt" data-slide="1">
+        <div class="hero-copy"><p>OFERTAS PARA<br>APROVEITAR HOJE</p><h1>PREÇOS BAIXOS</h1><small>Confira produtos selecionados.</small></div>
+        <div class="hero-emoji" aria-hidden="true">📦 🛍️ 🎁</div><div class="hero-discount">OFERTAS <b>ESPECIAIS</b></div>
+      </div>
+      <div class="hero-dots" aria-label="Selecionar banner"><button class="selected" data-go-slide="0" aria-label="Banner 1"></button><button data-go-slide="1" aria-label="Banner 2"></button></div>
+    </section>
+
+    <section class="shortcut-row" aria-label="Atalhos">
+      <article class="shortcut-card"><h3>Frete grátis</h3><div class="shortcut-art gift">✧<span>▱</span></div><p>Benefício por ser sua primeira compra.</p><button data-shortcut="frete grátis">Mostrar produtos</button></article>
+      <article class="shortcut-card"><h3>Entre na sua conta</h3><div class="shortcut-art account-art">◎</div><p>Aproveite ofertas para comprar tudo que quiser.</p><button id="shortcutLogin">Entrar na sua conta</button></article>
+      <article class="shortcut-card play-card"><div class="play-poster"><small>MERCADO PLAY</small><strong>FAMÍLIA<br>BUSCAPÉ</strong><span>▶</span></div><button data-shortcut="entretenimento">Assistir grátis</button></article>
+      <article class="shortcut-card"><h3>Meios de pagamento</h3><div class="shortcut-art wallet">▰</div><p>Pague suas compras com rapidez e segurança.</p><button data-shortcut="pagamento">Mostrar meios</button></article>
+      <article class="shortcut-card"><h3>Menos de R$100</h3><div class="shortcut-art coin">R$</div><p>Confira produtos com preços baixos.</p><button data-shortcut="até 100">Mostrar produtos</button></article>
+      <article class="shortcut-card"><h3>Mais vendidos</h3><div class="shortcut-art bags">♧</div><p>Explore os produtos que são tendência.</p><button data-shortcut="mais vendidos">Ir para Mais vendidos</button></article>
+      <button class="round-arrow shortcut-next" aria-label="Ver mais atalhos">›</button>
+    </section>
+
+
+    <section class="category-drawer hidden" id="categoryDrawer">
+      <div class="drawer-heading"><div><h2>Explore por categoria</h2><p>Escolha uma categoria para filtrar os produtos</p></div><button id="closeCategories" aria-label="Fechar categorias">×</button></div>
+      <div class="category-grid">
+        <button data-category-filter="Eletrônicos"><span>📱</span>Eletrônicos</button>
+        <button data-category-filter="Informática"><span>💻</span>Informática</button>
+        <button data-category-filter="Casa"><span>🛋️</span>Casa e decoração</button>
+        <button data-category-filter="Moda"><span>👟</span>Moda</button>
+        <button data-category-filter="Beleza"><span>🧴</span>Beleza</button>
+        <button data-category-filter="Esportes"><span>⚽</span>Esportes</button>
+        <button data-category-filter="Games"><span>🎮</span>Games</button>
+        <button data-category-filter="Eletrodomésticos"><span>🧺</span>Eletrodomésticos</button>
+        <button data-category-filter="Ferramentas"><span>🛠️</span>Ferramentas</button>
+        <button data-category-filter="Acessórios"><span>⌚</span>Acessórios</button>
+      </div>
+    </section>
+    <section class="coupon-strip" id="couponStrip">
+      <div class="coupon-intro"><span class="coupon-icon">%</span><div><h2>Cupons para economizar</h2><p>Ative um cupom e confira o desconto no carrinho.</p></div></div>
+      <div class="coupon-list">
+        <article class="coupon-card"><span class="coupon-tag">PRIMEIRACOMPRA</span><strong>R$ 15 OFF</strong><p>Em compras acima de R$ 100</p><button data-coupon="PRIMEIRACOMPRA">Ativar cupom</button></article>
+        <article class="coupon-card"><span class="coupon-tag">CASA10</span><strong>10% OFF</strong><p>Em produtos da categoria Casa</p><button data-coupon="CASA10">Ativar cupom</button></article>
+        <article class="coupon-card"><span class="coupon-tag">TECH20</span><strong>R$ 20 OFF</strong><p>Em produtos de Eletrônicos</p><button data-coupon="TECH20">Ativar cupom</button></article>
+      </div>
+    </section>
+    <section class="category-chips" aria-label="Filtrar por categoria">
+      <button class="active" data-category-filter="Todos">Todos</button><button data-category-filter="Eletrônicos">Eletrônicos</button><button data-category-filter="Informática">Informática</button><button data-category-filter="Casa">Casa</button><button data-category-filter="Moda">Moda</button><button data-category-filter="Beleza">Beleza</button><button data-category-filter="Esportes">Esportes</button><button data-category-filter="Games">Games</button><button data-category-filter="Eletrodomésticos">Eletrodomésticos</button><button data-category-filter="Ferramentas">Ferramentas</button>
+    </section>
+
+    <section class="results-toolbar hidden" id="resultsToolbar">
+      <div><h2 id="resultsTitle">Resultados</h2><p id="resultsCount"></p></div>
+      <label>Ordenar por
+        <select id="sortSelect"><option value="featured">Recomendados</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select>
+      </label>
+      <button id="clearSearch" class="text-button">Limpar pesquisa</button>
+    </section>
+
+    <section class="deals-layout" id="dealsSection">
+      <article class="deal-of-day">
+        <h2>Oferta do dia</h2>
+        <button class="product-image main-product" data-product="1" aria-label="Ver kit de cuecas">
+          <img src="https://images.unsplash.com/photo-1582966772680-860e372bb558?auto=format&fit=crop&w=500&q=80" alt="Kit de roupas dobradas">
+        </button>
+        <p class="product-name">Kit 6 Cuecas Boxer Classic Microfibra Sem Costura</p>
+        <span class="discount">46% OFF</span> <del>R$ 99,99</del>
+        <p class="price">R$ 53<sup>19</sup></p><small class="muted">+10 mil vendidos</small>
+        <p class="pix">no Pix</p><p class="installments">ou R$ 55,99 em outros meios</p>
+        <p><span class="full-label">Chegará grátis hoje ⚡ FULL</span></p><small class="muted">por ser sua primeira compra</small>
+        <button class="add-cart" data-add="1">Adicionar ao carrinho</button>
+      </article>
+      <article class="deals-panel">
+        <div class="section-heading"><div><h2>Ofertas</h2><button id="showAllOffers" class="text-button">Mostrar todas as ofertas</button></div><div class="mini-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="product-track" id="productTrack">
+          <article class="product-card" data-product-card="2"><button class="product-image" data-product="2"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Tênis esportivo branco e vermelho"></button><button class="favorite" data-favorite="2" aria-label="Adicionar aos favoritos">♡</button><p class="product-name">Tênis Casual Unissex Conforto</p><span class="discount">59% OFF</span> <del>R$ 239,99</del><p class="price">R$ 94<sup>90</sup></p><small class="muted">+100 mil vendidos</small><p class="coupon">R$ 8 OFF com Cupom</p><p class="pix">Frete grátis ⚡ FULL</p><button class="add-cart" data-add="2">Adicionar ao carrinho</button></article>
+          <article class="product-card" data-product-card="3"><button class="product-image" data-product="3"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80" alt="Ambiente de casa moderno"></button><button class="favorite" data-favorite="3" aria-label="Adicionar aos favoritos">♡</button><p class="product-name">Guarda-roupa Casal com portas e espelho</p><span class="discount">22% OFF</span> <del>R$ 1.399,00</del><p class="price">R$ 1.089</p><p class="pix">10x sem juros</p><p class="coupon">R$ 99,90 com Cupom</p><button class="add-cart" data-add="3">Adicionar ao carrinho</button></article>
+          <article class="product-card" data-product-card="4"><button class="product-image" data-product="4"><img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=400&q=80" alt="Máquina de barbear elétrica"></button><button class="favorite" data-favorite="4" aria-label="Adicionar aos favoritos">♡</button><p class="product-name">Máquina Barbeador Elétrico Recarregável</p><span class="discount">49% OFF</span> <del>R$ 99,90</del><p class="price">R$ 50<sup>40</sup></p><p class="pix">no Pix</p><small class="muted">ou R$ 56 em outros meios</small><button class="add-cart" data-add="4">Adicionar ao carrinho</button></article>
+          <article class="product-card" data-product-card="5"><button class="product-image" data-product="5"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80" alt="Cerca e paisagem rural"></button><button class="favorite" data-favorite="5" aria-label="Adicionar aos favoritos">♡</button><p class="product-name">Tela Mangueirão Hexagonal 1,50 m</p><span class="discount">46% OFF</span> <del>R$ 1.019,00</del><p class="price">R$ 542<sup>21</sup></p><p class="pix">no Pix</p><p class="coupon">Frete grátis</p><button class="add-cart" data-add="5">Adicionar ao carrinho</button></article>
+          <article class="product-card" data-product-card="6"><button class="product-image" data-product="6"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Relógio de pulso"></button><button class="favorite" data-favorite="6" aria-label="Adicionar aos favoritos">♡</button><p class="product-name">Relógio casual moderno</p><span class="discount">30% OFF</span> <del>R$ 199,90</del><p class="price">R$ 139<sup>90</sup></p><p class="pix">Frete grátis</p><button class="add-cart" data-add="6">Adicionar ao carrinho</button></article>
+        </div>
+        <button class="round-arrow products-next" id="productsNext" aria-label="Próximas ofertas">›</button>
+      </article>
+    </section>
+
+    <section class="search-results hidden" id="searchResults"><div class="results-grid" id="resultsGrid"></div></section>
+
+    <section id="offersPage" class="offers-page hidden">
+      <div class="offers-topline"></div>
+      <div class="offers-header">
+        <div class="offers-title"><h1>Ofertas</h1><p>Aproveite esses preços agora mesmo!</p><small>Novas ofertas todos os dias.</small></div>
+        <div class="offers-categories" role="tablist" aria-label="Categorias de ofertas">
+          <button class="offer-tab active" data-offer-filter="Todos"><span>％</span><b>Todas as<br>ofertas</b></button>
+          <button class="offer-tab" data-offer-filter="Relâmpago"><span>ϟ</span><b>Ofertas<br>relâmpago</b></button>
+          <button class="offer-tab" data-offer-filter="Preços baixos"><span>＄</span><b>Preços<br>imbatíveis</b></button>
+          <button class="offer-tab" data-offer-filter="Outlet"><span>♙</span><b>Outlet</b></button>
+          <button class="offer-tab" data-offer-filter="Eletrônicos"><span>▯</span><b>Celulares</b></button>
+          <button class="offer-tab" data-offer-filter="Informática"><span>▱</span><b>Notebooks</b></button>
+          <button class="offer-tab" data-offer-filter="Moda"><span>›</span><b>Moda</b></button>
+        </div>
+        <button class="offers-back" id="backHome">Voltar à página inicial</button>
+      </div>
+      <div class="offers-content">
+        <div class="offers-list-heading"><h2 id="offersFilterTitle">Todas</h2><label>Ordenar por <select id="offersSort"><option value="featured">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></label></div>
+        <div id="offersGrid" class="offers-grid"></div>
+        <nav id="offersPagination" class="offers-pagination" aria-label="Paginação de ofertas"></nav>
+        <section class="popular-searches"><h3>Termos mais procurados</h3><p>Apple Watch · Ar-condicionado · Bicicletas · Cafeteira · Carros novos · Computador · Fogão · Fone de ouvido Bluetooth · Freezer vertical · Geladeira · Guarda-roupa · iPhone · Notebook · Smart TV · Ventilador · Xbox · Xiaomi</p><h3>Pesquise produto por letra inicial</h3><div id="alphabetLinks" class="alphabet-links"></div></section>
+      </div>
+    </section>
+
+    <section class="extra-section"><h2>Descubra mais no Mercado Livre</h2><div class="extra-cards"><button data-shortcut="eletrônicos">Eletrônicos <span>⌁</span></button><button data-shortcut="casa">Casa e decoração <span>⌂</span></button><button data-shortcut="moda">Moda <span>◇</span></button><button data-shortcut="esportes">Esportes <span>⚽</span></button></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-links"><button data-footer-action="Trabalhe conosco">Trabalhe conosco</button><button data-footer-action="Termos e condições">Termos e condições</button><button data-footer-action="Privacidade">Como cuidamos da sua privacidade</button><button data-footer-action="Acessibilidade">Acessibilidade</button><button data-footer-action="Ajuda">Ajuda</button></div><small>Protótipo educacional independente. Não possui vínculo oficial com o Mercado Livre.</small></footer>
+
+
+  <section id="accountScreen" class="account-screen hidden" aria-label="Criar conta">
+    <div class="account-yellow-band"></div>
+    <a href="#" class="account-brand brand" id="accountHome"><span class="brand-mark">🤝</span><span class="brand-name">mercado<br><b>livre</b></span></a>
+    <div class="account-content">
+      <h1>Crie sua conta e compre com<br>frete grátis</h1>
+      <div class="account-panel">
+        <button class="google-demo" id="googleSignup"><span>G</span>Continuar com o Google</button>
+        <div class="account-divider"><span>Ou digite seu e-mail</span></div>
+        <form id="signupForm">
+          <label for="signupEmail">E-mail</label>
+          <input id="signupEmail" name="email" type="email" required placeholder="exemplo@email.com">
+          <label for="signupName">Nome completo</label>
+          <input id="signupName" name="name" required placeholder="Como podemos te chamar?">
+          <button class="account-continue" type="submit">Continuar</button>
+        </form>
+      </div>
+      <p class="corporate-question">Você precisa de uma conta para sua empresa?<br><button id="corporateSignup">Crie uma conta corporativa</button></p>
+      <button id="accountBack" class="account-back">Voltar à loja</button>
+    </div>
+  </section>
+
+  <div class="cookie-bar" id="cookieBar"><p>Usamos cookies para melhorar sua experiência no Mercado Livre. Consulte mais informações na nossa <a href="#" id="privacyLink">Central de privacidade</a>.</p><div><button id="acceptCookies" class="cookie-primary">Aceitar cookies</button><button id="configureCookies">Configurar cookies</button></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fechar">×</button><div id="modalContent"></div></section>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
